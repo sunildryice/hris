@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('employee', function (Blueprint $table) {
-            
-
-            $table->string('contact')->change();
+        Schema::table('attendences', function (Blueprint $table) {
+            $table->time('check_in')->change();
+            $table->time('check_out')->change();
         });
     }
 
@@ -23,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('employee', function (Blueprint $table) {
+        Schema::table('attendences', function (Blueprint $table) {
             //
         });
     }

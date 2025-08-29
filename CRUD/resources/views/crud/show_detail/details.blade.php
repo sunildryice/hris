@@ -11,39 +11,21 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <a class="navbar-brand" href="{{ route('employee.details', ['staff_id' => $staff_id]) }}">Details</a>
+        <a class="navbar-brand" href="{{route('attendence.show',['emp_id'=>$staff_id])}}">Attendence</a>
+    </nav>
+    
     <h1>Details</h1>
     <div class="container mt-5">
         <div class="card shadow-lg p-4 rounded-3">
             <div class="card-body">
                 <h4 class="card-title mb-3">Details</h4>
-                {{--
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">Full_name</li>
-                    <li class="list-group-item">{{$staff_id->full_name}}</li>
-                </ul>
-
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">Contact_Number</li>
-                    <li class="list-group-item">{{$staff_id->contact_number}}</li>
-                </ul>
-
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">Email</li>
-                    <li class="list-group-item">{{$staff_id->email}}</li>
-                </ul>
-
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">Permanent_address</li>
-                    <li class="list-group-item">{{$staff_id->permanent_address}}</li>
-                </ul>
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">Temporary_address</li>
-                    <li class="list-group-item">{{$staff_id->temporary_address}}</li>
-                </ul> --}}
 
 
-                <table class=" table table-bordered table-striped table-responsive w-auto " border="2">
+                <table class=" table table-bordered table-striped table-responsive w-auto" border="2">
                     <tr>
+                        
                         <td>Full_name</td>
                         <td>{{$staff_id->full_name}}</td>
                     </tr>
@@ -72,15 +54,8 @@
                 <p>Contact Name: {{ $detail->emerg_name }}</p>
                 <p>Relation: {{ $detail->relation }}</p>
                 <p>Blood Group:{{$detail->blood_group}}</p>
-                                <p>Blood Group:{{$detail->emp_id}}</p>
+                <p>Blood Group:{{$detail->emp_id}}</p>
 
-                {{-- <a class="btn btn-primary" href="">Edit</a>
-                <form action="{{route('detail.delete',['det_id'=>$detail->det_id])}}" method="post"
-                    onsubmit="return confirm('Are you sure to Delete??');">
-                    @csrf
-                    @method("DELETE")
-                    <button class="btn btn-danger">Delete</button>
-                </form> --}}
                 <hr>
                 @endforeach
 
@@ -90,14 +65,6 @@
                             aria-expanded="false" aria-controls="formsection">
                             Add More
                         </a>
-
-
-
-                        {{-- <a href="#" class="btn btn-primary">Edit</a> --}}
-
-
-
-
 
                         <div id="formsection" class="collapse">
                             <div class="card card-body">
@@ -143,9 +110,9 @@
                         </div>
                         <script>
                             document.getElementById('formsection').addEventListener('shown.bs.collapse', function () {
-    document.getElementById('myForm').scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
+                             document.getElementById('myForm').scrollIntoView({ 
+                              behavior: 'smooth', 
+                              block: 'start' 
     });
 });
                         </script>
@@ -155,9 +122,6 @@
             </div>
         </div>
     </div>
-
-
 </body>
-
 </html>
 @endsection
